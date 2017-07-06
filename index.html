@@ -6127,149 +6127,16 @@ $(document).ready(function() {
 <tr><td>HOUSEWARES</td><td>HH AW1 S W EH2 R Z</td>
 
     </table>
-
-<!--
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
-d3.text("ipadictionary.csv", function(data) {
-                var parsedCSV = d3.csvParseRows(data);
-
-                var container = d3.select("body")
-                    .append("myTable")
-
-                    .selectAll("tr")
-                        .data(parsedCSV).enter()
-                        .append("tr")
-
-                    .selectAll("td")
-                        .data(function(d) { return d; }).enter()
-                        .append("td")
-                        .text(function(d) { return d; });
-            });
-</script>
-
--->
-
-
-<!--
-<table id="myTable">
-  <tr class="header">
-    <th style="width:60%;">Name</th>
-    <th style="width:40%;">Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Berglunds snabbkop</td>
-    <td>Sweden</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Koniglich Essen</td>
-    <td>Germany</td>
-  </tr>
-</table>
--->
-
-
-<!--
-<script>
-function has() {
-  // Declare variables 
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("has");
-  //filter = input.value.toUpperCase()
-  filter = "^.*"+input.value.toUpperCase()+".*";
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      if (td.innerHTML.toUpperCase().match(filter)) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-</script>
--->
-
-<script>
-function doesnotcontain() {
-  // Declare variables 
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("dnc");
-  filter = "^(?!.*"+input.value.toUpperCase()+")";
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      if (td.innerHTML.toUpperCase().match(filter)) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-</script>
-
-<!--load the csv file as a (too big) table
-<script src="https://d3js.org/d3.v4.min.js"></script>
-
-<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-
-<script type="text/javascript"charset="utf-8">
-   var dataSet=[];
-   d3.text("ipadictionary.csv", function(data)
-      {
-         dataSet=d3.csvParseRows(data);
-      });
-/* this example dataSet works
-dataSet = [
-[ "Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800" ],
-    [ "Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750" ],
-    [ "Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009/01/12", "$86,000" ]
-]
-*/
-
-</script>
--->
-
-<!--load the csv file as a (too big) table
-<script type="text/javascript"charset="utf-8">
-
-
-   $(document).ready(function() {
-      $('#example').DataTable( {
-        aaData: dataSet,
-        aoColumns: [
-        { title: "rownum" },
-        { title: 'word' },
-        { title: 'transcription' },
-        { title: 'word length' },
-        { title: 'transcription length' },
-        { title: 'frequency' }
-        ]
-      });
-   });
-</script>
--->
-
-
-
-
 </body>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-102161243-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </html>
