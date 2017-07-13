@@ -1,34 +1,52 @@
 /* Custom filtering functions which will search data in column 2 */
 
+function wrapper (x){
+return "(?=.*"+x+")"
+}
+
 //contains
 $.fn.dataTable.ext.search.push(
     function( settings, data, dataIndex ) {
-var input, filter;
+var input, filter, terms;
  input = $('#has').val();
- regx = "^.*"+input.toUpperCase()+".*";
- if(input == ""|| input == null){
+  if(input == ""|| input == null){
  	return true
  }
-  else if(data[1].match(regx)){
-    return true;
-  }
-    return false;
+  else {
+  	terms = input.split(",");
+  	var final = "";
+  	for (index = 0; index < terms.length; ++index) {
+  		regx = "^.*"+terms[index].toUpperCase()+".*";
+  		final = final + wrapper(regx)
+  	}
+  		if(data[1].match(final)){
+  			return true;
+  		}
+  		return false;
+  	}
   }
 );
 
 //does not contain
 $.fn.dataTable.ext.search.push(
     function( settings, data, dataIndex ) {
-var input, filter;
+var input, filter, terms;
  input = $('#dnc').val();
- regx =  "^(?!.*"+input.toUpperCase()+")";
  if(input == ""|| input == null){
  	return true
  }
-  else if(data[1].match(regx)){
-    return true;
-  }
-    return false;
+  else {
+  	terms = input.split(",");
+  	var final = "";
+  	for (index = 0; index < terms.length; ++index) {
+  		regx =  "^(?!.*"+terms[index].toUpperCase()+")";
+  		final = final + wrapper(regx)
+  	}
+  		if(data[1].match(final)){
+  			return true;
+  		}
+  		return false;
+  	}
   }
 );
 
