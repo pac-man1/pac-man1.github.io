@@ -1,0 +1,7 @@
+input:focus {
+    outline: none;
+    outline-color: initial;
+    outline-style: none;
+    outline-width: initial;
+    background-color: #f6f7fc;
+}
