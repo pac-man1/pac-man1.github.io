@@ -82,6 +82,7 @@ Appears Next to a Vowel:
 $(document).ready(function() {
     $('#myTable').DataTable({
       "ordering": false,
+      "deferRender": true
       dom: 'Blrtip',
       buttons: [
             'copy', 'csv', 'excel'
